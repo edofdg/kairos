@@ -63,7 +63,7 @@ class App extends Component {
           <Route path='/recognize' render={(props) => <Recognize {...props} />} />
           <Route path='/register' render={(props) => <Register {...props} />} />
           {/* <Route path='/gallery' render={(props) => <Gallery {...props} />} /> */}
-          <Route path='**' render={(props) => <LandingPage {...props} />} />
+          <Route path='**' render={(props) => <Login {...props} />} />
         </Switch>
       </div>
     );
