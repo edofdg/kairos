@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/register.css';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-
+import { withRouter } from 'react-router-dom'
 class Login extends Component {
 
     constructor(props) {
@@ -22,7 +22,10 @@ class Login extends Component {
     login = () => {
         let userNames = ['DCPEAST', 'OFDG', 'ADLCP', 'USER'];
         if(this.state.pin === '1234' &&  userNames.indexOf(this.state.name) > -1) {
-            window.location.href = "/home";
+
+            this.props.history.push("/home");
+            // window.location.href = "/home";
+            // window.history.pushState(window.location.href, null,'/home');
         } else {
             alert('Wrong credentials');
         }
@@ -46,6 +49,10 @@ class Login extends Component {
                     onChange={(event) => this.handleInput(event)}
                 />
                 <div className="margin-top-30 margin-left-30">
+
+                    {/* <Link to={'/home'} className='register-button'>Login</Link> */}
+
+
                     <RaisedButton className='register-button' onClick={this.login} label="LOGIN" primary={true} style={{ 'margin': 16 }} />
                 </div>
            </div>
