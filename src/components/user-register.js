@@ -8,6 +8,7 @@ class UserRegister extends Component {
         } else if (this.props.detect.message === 'failure') {
             return (<p><b>Registration failed</b><br />Please try again.</p>);
         } else if (this.props.detect.message === 'success') {
+            // alert("User successfully registered.");
             return (
                 <div>
                     <p>

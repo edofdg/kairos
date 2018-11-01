@@ -37,7 +37,18 @@ class Register extends Component {
         super(props);
 
         this.state = {
-            username: '',
+            // username: '',
+            name: '',
+            fatherName: '',
+            aadharNo: '',
+            mo: '',
+            type: '',
+            lastLoc: '',
+            id: '',
+            desc: '',
+            gang: '',
+            coCriminals: '',
+            encodedData: '',
             load: false
         };
     }
@@ -50,10 +61,27 @@ class Register extends Component {
         this.webcam = webcam;
     }
 
+    getEncodedData = () => {
+        let data = {
+            name: this.state.name,
+            fatherName: this.state.fatherName,
+            aadharNo: this.state.aadharNo,
+            mo: this.state.mo,
+            type: this.state.type,
+            lastLoc: this.state.lastLoc,
+            id: this.state.id,
+            desc: this.state.desc,
+            gang: this.state.gang,
+            coCriminals: this.state.coCriminals,
+            // encodedData: this.state.encodedData,
+        };
+        return JSON.stringify(data);
+    }
+
     capture = () => {
 
-        if (this.state.username === '' || this.state.username === ' ') {
-            alert('Username cannot be empty');
+        if (this.state.name.trim().length === 0) {
+            alert('Name cannot be empty');
             return;
         }
 
@@ -66,7 +94,7 @@ class Register extends Component {
         axios.post(`https://api.kairos.com/enroll`, {
             gallery_name: 'newCameriaGallery',
             image: imageSrc,
-            subject_id: this.state.username
+            subject_id: this.getEncodedData()
         }, {
                 headers: {
                     app_id: APP_ID,
@@ -102,9 +130,20 @@ class Register extends Component {
             });
     }
 
-    handleUsername(e) {
+    handleInput(e) {
+        console.log(e.target.name);
+        // name
+        // fatherName
+        // aadharNo
+        // mo
+        // type
+        // lastLoc
+        // id
+        // desc
+        // gang
+        // coCriminals
         this.setState({
-            username: e.target.value
+            [e.target.name]: e.target.value
         });
     }
 
@@ -125,9 +164,64 @@ class Register extends Component {
                             <br />
                             <div style={{ 'margin': '0 auto!important' }}>
                                 <TextField
-                                    hintText="provide identification name"
-                                    floatingLabelText="Username"
-                                    onChange={(event) => this.handleUsername(event)}
+                                    name="name"
+                                    hintText="Name"
+                                    floatingLabelText="Name"
+                                    onChange={(event) => this.handleInput(event)}
+                                />
+                                <TextField
+                                    name="fatherName"
+                                    hintText="Father's Name"
+                                    floatingLabelText="Father's Name"
+                                    onChange={(event) => this.handleInput(event)}
+                                />
+                                <TextField
+                                    name="aadharNo"
+                                    hintText="Aadhar No"
+                                    floatingLabelText="Aadhar No"
+                                    onChange={(event) => this.handleInput(event)}
+                                />
+                                <TextField
+                                    name="mo"
+                                    hintText="MO"
+                                    floatingLabelText="MO"
+                                    onChange={(event) => this.handleInput(event)}
+                                />
+                                <TextField
+                                    name="type"
+                                    hintText="Type"
+                                    floatingLabelText="Type"
+                                    onChange={(event) => this.handleInput(event)}
+                                />
+                                <TextField
+                                    name="lastLoc"
+                                    hintText="Last Known Location"
+                                    floatingLabelText="Last Known Location"
+                                    onChange={(event) => this.handleInput(event)}
+                                />
+                                <TextField
+                                    name="id"
+                                    hintText="ID"
+                                    floatingLabelText="ID"
+                                    onChange={(event) => this.handleInput(event)}
+                                />
+                                <TextField
+                                    name="desc"
+                                    hintText="Description"
+                                    floatingLabelText="Description"
+                                    onChange={(event) => this.handleInput(event)}
+                                />
+                                <TextField
+                                    name="gang"
+                                    hintText="Gang"
+                                    floatingLabelText="Gang"
+                                    onChange={(event) => this.handleInput(event)}
+                                />
+                                <TextField
+                                    name="coCriminals"
+                                    hintText="Co-Criminals"
+                                    floatingLabelText="Co-Criminals"
+                                    onChange={(event) => this.handleInput(event)}
                                 />
                             </div>
                             <br />
