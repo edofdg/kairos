@@ -32,6 +32,10 @@ const style = {
     },
 };
 
+const videoConstraints = {
+    facingMode: { exact: "environment" }
+  };
+
 class Register extends Component {
     constructor(props) {
         super(props);
@@ -160,8 +164,12 @@ class Register extends Component {
                                 ref={this.setRef}
                                 screenshotFormat="image/png"
                                 width={320}
+                                videoConstraints={videoConstraints}
                             />
                             <br />
+                            <RaisedButton className='register-button' onClick={this.capture} label="REGISTER" primary={true} style={{ 'margin': 16 }} />
+                            <RaisedButton className='register-button' onClick={this.resetGallery} label="RESET GALLERY" primary={true} style={{ 'margin': 16 }} />
+                            <UserRegister detect={this.props.regData} />
                             <div style={{ 'margin': '0 auto!important' }}>
                                 <TextField
                                     name="name"
@@ -235,9 +243,6 @@ class Register extends Component {
                                 style={(this.state.load === false) ? style.hide : style.refresh}
                             />
                             <br />
-                            <RaisedButton className='register-button' onClick={this.capture} label="REGISTER" primary={true} style={{ 'margin': 16 }} />
-                            <RaisedButton className='register-button' onClick={this.resetGallery} label="RESET GALLERY" primary={true} style={{ 'margin': 16 }} />
-                            <UserRegister detect={this.props.regData} />
                         </div>
                     </Col>
                 </Row>

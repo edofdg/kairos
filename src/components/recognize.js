@@ -32,7 +32,7 @@ const style = {
 };
 
 const videoConstraints = {
-    facingMode: 'environment'
+    facingMode: { exact: "environment" }
   };
 
 class Recognize extends Component {

@@ -17,6 +17,7 @@ class UserRecognize extends Component {
                <div className="text-field"><b>Name: </b> {data.name}</div>
                <div className="text-field"><b>Father's Name: </b> {data.fatherName}</div>
                <div className="text-field"><b>Aadhar No: </b> {data.aadharNo}</div>
+               <div className="text-field"><b>MO: </b> {data.mo}</div>
                <div className="text-field"><b>Type: </b> {data.type}</div>
                <div className="text-field"><b>Last Known Location: </b> {data.lastLoc}</div>
                <div className="text-field"><b>ID: </b> {data.id}</div>
