@@ -11,6 +11,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import LandingPage from './components/landing-page';
 import Recognize from './components/recognize';
 import Register from './components/register';
+import Login from './components/login';
 // import Gallery from './components/gallery';
 
 
@@ -50,13 +51,15 @@ class App extends Component {
           open={this.state.toggle}
           onRequestChange={(toggle) => this.setState({ toggle })}
         >
-          <Link to={'/'} className='link'><MenuItem onClick={() => this.handleClose()}>Home</MenuItem></Link>
+          <Link to={'/home'} className='link'><MenuItem onClick={() => this.handleClose()}>Home</MenuItem></Link>
           <Link to={'/recognize'} className='link'><MenuItem onClick={() => this.handleClose()}>Recognize</MenuItem></Link>
           <Link to={'/register'} className='link'><MenuItem onClick={() => this.handleClose()}>Register</MenuItem></Link>
         </Drawer>
 
         <Switch>
-          <Route exact path='/' render={(props) => <LandingPage {...props} />} />
+          <Route exact path='/login' render={(props) => <Login {...props} />} />
+
+          <Route exact path='/home' render={(props) => <LandingPage {...props} />} />
           <Route path='/recognize' render={(props) => <Recognize {...props} />} />
           <Route path='/register' render={(props) => <Register {...props} />} />
           {/* <Route path='/gallery' render={(props) => <Gallery {...props} />} /> */}

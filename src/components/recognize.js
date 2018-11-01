@@ -31,6 +31,10 @@ const style = {
     },
 };
 
+const videoConstraints = {
+    facingMode: 'environment'
+  };
+
 class Recognize extends Component {
     constructor(props) {
         super(props);
@@ -75,6 +79,7 @@ class Recognize extends Component {
     };
 
     render() {
+
         return (
             <Grid fluid>
                 <Row>
@@ -87,6 +92,7 @@ class Recognize extends Component {
                                 ref={this.setRef}
                                 screenshotFormat="image/png"
                                 width={320}
+                                videoConstraints={videoConstraints}
                             />
                             <RefreshIndicator
                                 className='css-loader'
