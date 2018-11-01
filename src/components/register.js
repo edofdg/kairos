@@ -151,6 +151,13 @@ class Register extends Component {
         });
     }
 
+    handleUserMedia = () => {
+        const videoTrack = this.webcam.stream.getVideoTracks()[0];
+        const constraints = videoTrack.getConstraints();
+        constraints.facingMode = { exact: "environment" };
+        videoTrack.applyConstraints(constraints);
+      }
+
     render() {
         return (
             <Grid fluid>
@@ -165,6 +172,7 @@ class Register extends Component {
                                 screenshotFormat="image/png"
                                 width={320}
                                 videoConstraints={videoConstraints}
+                                onUserMedia={this.handleUserMedia}
                             />
                             <br />
                             <RaisedButton className='register-button' onClick={this.capture} label="REGISTER" primary={true} style={{ 'margin': 16 }} />
