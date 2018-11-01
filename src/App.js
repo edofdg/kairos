@@ -57,9 +57,9 @@ class App extends Component {
         </Drawer>
 
         <Switch>
-          <Route exact path='/login' render={(props) => <Login {...props} />} />
+          <Route path='/login' render={(props) => <Login {...props} />} />
 
-          <Route exact path='/home' render={(props) => <LandingPage {...props} />} />
+          <Route path='/home' render={(props) => <LandingPage {...props} />} />
           <Route path='/recognize' render={(props) => <Recognize {...props} />} />
           <Route path='/register' render={(props) => <Register {...props} />} />
           {/* <Route path='/gallery' render={(props) => <Gallery {...props} />} /> */}
