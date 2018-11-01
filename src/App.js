@@ -11,6 +11,8 @@ import { Route, Switch, Link } from 'react-router-dom';
 import LandingPage from './components/landing-page';
 import Recognize from './components/recognize';
 import Register from './components/register';
+// import Gallery from './components/gallery';
+
 
 class App extends Component {
   constructor(props) {
@@ -57,6 +59,7 @@ class App extends Component {
           <Route exact path='/' render={(props) => <LandingPage {...props} />} />
           <Route path='/recognize' render={(props) => <Recognize {...props} />} />
           <Route path='/register' render={(props) => <Register {...props} />} />
+          {/* <Route path='/gallery' render={(props) => <Gallery {...props} />} /> */}
           <Route path='**' render={(props) => <LandingPage {...props} />} />
         </Switch>
       </div>

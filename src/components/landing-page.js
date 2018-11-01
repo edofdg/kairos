@@ -70,6 +70,7 @@ class LandingPage extends Component {
                                 Deprecated for now due to API call limit
                             </CardText>
                             <CardActions>
+                                {/* <Link to={'/gallery'}><FlatButton className='flat-btn' label="GALLERY" /></Link> */}
                                 <FlatButton className='flat-btn' label="GALLERY" />
                             </CardActions>
                         </Card>

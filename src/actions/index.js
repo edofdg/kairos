@@ -28,3 +28,10 @@ export function clearDisplayData() {
         payload: {}
     };
 }
+
+// export fetchGalleryData = () => {
+//     return {
+//         type: FETCH_GALLERY,
+
+//     }
+// }

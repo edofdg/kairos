@@ -15,6 +15,8 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import RefreshIndicator from 'material-ui/RefreshIndicator';
 
+import { APP_ID, APP_KEY } from '../constants/credentials';
+
 // loader styling
 const style = {
     container: {
@@ -67,8 +69,8 @@ class Register extends Component {
             subject_id: this.state.username
         }, {
                 headers: {
-                    app_id: <enter app id here>,
-                    app_key: <enter app key here>
+                    app_id: APP_ID,
+                    app_key: APP_KEY
                 }
             }).then((response) => {
                 console.log(response);
@@ -89,8 +91,8 @@ class Register extends Component {
             gallery_name: "newCameriaGallery"
         }, {
                 headers: {
-                    app_id: <enter app id here>,
-                    app_key: <enter app key here>
+                    app_id: APP_ID,
+                    app_key: APP_KEY
                 }
             }).then((response) => {
                 alert('Gallery has been reset. Feel free to register now');

@@ -14,6 +14,8 @@ import { recognizeUser, clearDisplayData } from '../actions';
 
 import UserRecognize from './user-recognize';
 
+import { APP_ID, APP_KEY } from '../constants/credentials';
+
 // loader styling
 const style = {
     container: {
@@ -58,8 +60,8 @@ class Recognize extends Component {
             image: imageSrc
         }, {
                 headers: {
-                    app_id: <enter your app id here>,
-                    app_key: <enter your app key here>
+                    app_id: APP_ID,
+                    app_key: APP_KEY
                 }
             }).then((response) => {
                 console.log('response', response);
